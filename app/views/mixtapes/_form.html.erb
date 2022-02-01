@@ -1,0 +1,16 @@
+<% if @mixtape.errors.any? %>
+    <% @mixtape.errors.full_messages.each do |el| %>
+        <li>
+            <%=el %>
+        </li>
+    <% end %>
+<% end %>
+
+<%= form_with model: @mixtape, local:true do |f| %>
+<%= f.label :name %>
+<br>
+<%= f.text_field :name%>
+<br><br>
+<%= f.submit %>
+
+<% end %>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TunrDb</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body style="background-color:#000; color:#fff">
+    <nav>
+      <h1>
+        Tunr Music Database
+      </h1>
+      <% if @current_user.present? %>
+          Welcome, <%= @current_user.name %>
+          |
+          <%= link_to "Logout", login_path, method: 'delete' %>
+          |
+          <%= link_to "Create Mixtape", new_mixtape_path %>
+      <% else %>
+        <%= link_to "Login", login_path %>
+        |
+        <%= link_to "Sing up", '' %>
+      <% end %>
+      |
+        <%= link_to "Mixtapes", mixtapes_path %>
+      <hr>
+    </nav>
+
+    <%= yield %>
+  </body>
+  <footer>
+    <hr>
+  </footer>
+</html>

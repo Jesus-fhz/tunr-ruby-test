@@ -1,0 +1,9 @@
+<h1>Pages#home</h1>
+<p>
+
+    <% if @current_user.present? %>
+        <h3>Welcome ser: <%= @current_user.name %> </h3>
+    <% end %>
+</p>
+
+
